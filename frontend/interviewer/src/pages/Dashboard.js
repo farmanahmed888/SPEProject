@@ -1,5 +1,11 @@
 import React from 'react'
-
+import Navbar from '../components/Navbar';
+import Table from '../components/Table';
+import StatisticCard from '../components/StatisticCard';
+import FeatureCard from '../components/FeatureCard';
+import ShortListings from '../components/ShortListings';
+import "./css/dashboard.css";
+import { useState, useEffect } from "react";
 const Dashboard = () => {
   
     const [tableData, setTableData] = useState([]);
@@ -65,7 +71,7 @@ const Dashboard = () => {
 			onClick={() => handleViewClick(viewUrl)}
 			className="view-button"
 		>
-			<img src={viewIcon} alt="View" />
+			{/* <img src={viewIcon} alt="View" /> */}
 		</button>
 	);
 
@@ -75,13 +81,12 @@ const Dashboard = () => {
 
 			<main class="main-container">
 				<div class="row1">
-					<StatisticCard image="login-bg.png" />
-
+					
 					<div class="section2">
 						<FeatureCard
 							cardClass="col2"
 							image="doctor-chat.png"
-							title="Chat with a Doctor"
+							title="Active Jobs"
 							btnText="Chat"
 							link="/doctor-chat"
 						/>
@@ -89,7 +94,22 @@ const Dashboard = () => {
 						<FeatureCard
 							cardClass="col3"
 							image="search.png"
-							title="Region & Disease"
+							title="Closed Jobs"
+							btnText="Search Records"
+							link="/search-records"
+						/>
+                        <FeatureCard
+							cardClass="col2"
+							image="doctor-chat.png"
+							title="Enroll"
+							btnText="Chat"
+							link="/doctor-chat"
+						/>
+
+						<FeatureCard
+							cardClass="col3"
+							image="search.png"
+							title="Interviews"
 							btnText="Search Records"
 							link="/search-records"
 						/>
@@ -101,38 +121,17 @@ const Dashboard = () => {
 					<div class="col1">
 						<ShortListings
 							listingClass="section1"
-							title="Appointments"
+							title="Upcomming"
 							noOfCards="3"
 							link="/appointments"
 						/>
 
 						<ShortListings
 							listingClass="section2"
-							title="Recently Treated"
+							title="Completed"
 							noOfCards="3"
 							link="/recent-diagnose"
 						/>
-					</div>
-					<div class="col2" style={{ paddingLeft: "50px" }}>
-						<h2>Patient Diagnosed Request</h2>
-						<br />
-						{loading ? (
-							<p>Loading...</p>
-						) : (
-							<Table
-								columns={columns}
-								data={tableData.map((row) => ({
-									Name: row.name,
-									Questionnaire:
-										row.questionnaire + "/30",
-									"View Diagnose": renderViewButton(
-										row.View
-									),
-								}))}
-							/>
-						)}
-						<br/>
-						<button className="medium-primary-btn">View More</button>
 					</div>
 				</div>
 			</main>
