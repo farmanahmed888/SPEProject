@@ -6,11 +6,23 @@ import ViewEnrollments from './pages/ViewEnrollments';
 import ViewPreviousJobs from './pages/ViewPreviousJobs';
 import ViewActiveJobs from './pages/ViewActiveJobs';
 import DisplayResult from './pages/DisplayResult';
+import Layout from './pages/Layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <DisplayResult/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Login />}/>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/create-job" element={<JobForm />} />
+                <Route path="/active-jobs-view" element={<ViewEnrollments />} />
+                <Route path="/view-more-prev" element={<ViewPreviousJobs/>} />
+                <Route path="/view-more-open" element={<ViewActiveJobs/>} />
+                <Route path="/view-result" element={<DisplayResult/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

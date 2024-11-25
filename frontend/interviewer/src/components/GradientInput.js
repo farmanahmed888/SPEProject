@@ -13,9 +13,13 @@ const GradientInput = (props) => {
         onChange={props.onChange}
         required
         style={props.style} 
+        min={props.min}
+        max={props.max}
       />
       <label htmlFor={props.name} className="form__label">
         {props.name}
+        <br />
+        {props.value}
       </label>
     </div>
   )

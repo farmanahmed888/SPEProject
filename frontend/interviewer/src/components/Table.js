@@ -1,6 +1,8 @@
 import React from 'react'
 import "./css/table.css"
 const Table = ({ columns, data }) => {
+	console.log("columns: ", columns);
+	console.log("data: ", data);
     return (
 		<div>
 			<table>

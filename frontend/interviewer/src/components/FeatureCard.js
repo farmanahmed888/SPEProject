@@ -3,12 +3,9 @@ import React from 'react'
 const FeatureCard = (props) => {
   return (
     <div class={props.cardClass}>
-			{/* <img src={require(`../../static/imgs/${props.image}`)} alt="" /> */}
 			<div class="contents">
 				<h1>{props.title}</h1>
-				{/* <Link to={props.link}>
-					<button class="white-btn">{props.btnText}</button>
-				</Link> */}
+				<p>{props.count}</p>
 			</div>
 		</div>
   )
