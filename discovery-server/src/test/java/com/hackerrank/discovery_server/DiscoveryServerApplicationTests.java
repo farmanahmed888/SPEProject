@@ -1,10 +1,10 @@
-package com.hackerrank.code_service;
+package com.hackerrank.discovery_server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CodeServiceApplicationTests {
+class DiscoveryServerApplicationTests {
 
 	@Test
 	void contextLoads() {
