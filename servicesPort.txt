@@ -1,0 +1,4 @@
+interviewer-service=8081
+candidate-service=8082
+discovery-server=8761
+loadbalancer=8000
