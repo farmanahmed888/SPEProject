@@ -6,7 +6,7 @@ import java.sql.Date;
 
 @Data
 public class updateAppliedJobDTO {
-    Integer candidateId;
-    Integer jobId;
+    Integer cid;
+    Integer jid;
     Date InterviewDate;
 }

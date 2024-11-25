@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AppliedJobDTO {
     private Integer id;
-    private Integer candidateId;
-    private Integer jobId;
+    private Integer cid;
+    private Integer jid;
     private String jobName;
     private String testScore;
     private String appliedStatus = "pending";

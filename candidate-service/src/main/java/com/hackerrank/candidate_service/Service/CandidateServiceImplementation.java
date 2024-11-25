@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CandidateServiceImpl implements CandidateService {
+public class CandidateServiceImplementation implements CandidateService {
 
     @Autowired
     CandidateRepository candidateRepository;
@@ -25,7 +25,7 @@ public class CandidateServiceImpl implements CandidateService {
     @Autowired
     private AppliedRepository appliedRepository;
     private InterviewerClient InterviewerClient;
-    public CandidateServiceImpl(InterviewerClient InterviewerClient) {
+    public CandidateServiceImplementation(InterviewerClient InterviewerClient) {
         this.InterviewerClient = InterviewerClient;
     }
 
@@ -47,21 +47,20 @@ public class CandidateServiceImpl implements CandidateService {
             applied.setCandidate(candidate);
             applied.setJid(jobRequest.getJid());
             applied.setJobName(jobRequest.getCompany_name());
-            //applied.setTestScore(jobRequest.getTest_score());
             applied.setAppliedStatus(jobRequest.getApplied_status());
             appliedRepository.save(applied);
 
             JobEnrollDTO dto = new JobEnrollDTO();
-            dto.setCandidateId(candidate.getId().longValue());
-            dto.setJobId(jobRequest.getJid().longValue());
+            dto.setCandidateId(candidate.getId());
+            dto.setJobId(jobRequest.getJid());
             dto.setCandidateName(candidate.getEmail());
             System.out.println(dto);
             ResponseEntity<String> d = InterviewerClient.enrollInJob(dto);
             System.out.println(d);
-            return "Success"; // You may return any token or message as needed
+            return "Success";
         } catch (Exception e) {
             e.printStackTrace();
-            return null; // Or handle error gracefully
+            return null;
         }
     }
 
@@ -111,7 +110,6 @@ public class CandidateServiceImpl implements CandidateService {
         Optional<Applied> appliedOptional = appliedRepository.findById(id);
         if (appliedOptional.isPresent()) {
             Applied applied = appliedOptional.get();
-            // applied.setTestScore(testScore);
             appliedRepository.save(applied);
             return true;
         }

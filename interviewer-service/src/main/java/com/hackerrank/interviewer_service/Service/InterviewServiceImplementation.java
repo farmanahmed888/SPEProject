@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 @Service
-public class InterviewServiceImp implements InterviewerService{
+public class InterviewServiceImplementation implements InterviewerService{
     private CandidateClient candidateClient;
-    public void InterviewerServiceImpl(CandidateClient candidateClient) {
+    public void InterviewServiceImplementation(CandidateClient candidateClient) {
         this.candidateClient = candidateClient;
     }
 
@@ -188,8 +188,8 @@ public class InterviewServiceImp implements InterviewerService{
         enrollmentRepository.save(enrollmentDate);
 
         updateAppliedJobDTO updateAppliedJobDTO = new updateAppliedJobDTO();
-        updateAppliedJobDTO.setCandidateId(enrollmentDate.getCandidateId());
-        updateAppliedJobDTO.setJobId(enrollmentDate.getJob().getId());
+        updateAppliedJobDTO.setCid(enrollmentDate.getCandidateId());
+        updateAppliedJobDTO.setJid(enrollmentDate.getJob().getId());
         updateAppliedJobDTO.setInterviewDate(dto.getInterviewDate());
         candidateClient.updateAppliedJob(updateAppliedJobDTO);
     }
