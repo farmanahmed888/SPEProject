@@ -128,3 +128,7 @@ body {
     padding: 8px 28px;
     font: 12px Playfair Display, sans-serif;
   }
+  .more-button{
+    display: flex;
+    justify-content: center;
+  }

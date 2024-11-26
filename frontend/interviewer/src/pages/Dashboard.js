@@ -8,13 +8,16 @@ import { useState, useEffect } from "react";
 import { GetJobOpenings, GetJobClosedOpenings } from "../api/Apis";
 import { useNavigate } from "react-router-dom";
 import "./css/common.css";
+import axios from "axios";
+import { BASE_URL } from "../config";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
-  const columns = ["id", "company", "jobDescription", "roleType", "status"];
+  const columns = ["id", "company", "jobDescription", "roleType", "status","Close Job"];
+  const closedColumns = ["id", "company", "jobDescription", "roleType", "status"];
   const [closedJobs, setClosedJobs] = useState([]);
   const interviewer_id = localStorage.getItem("interviewer_id");
-
+  const link="/active-jobs-view";
   const onCreateHandle = () => {
     navigate(`/create-job`);
   };
@@ -26,10 +29,10 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const result = await GetJobOpenings();
-        const closedResult = await GetJobClosedOpenings();
-        console.log("result: ", result);
+        const closedResult =  await axios.get(`${BASE_URL}/interviewer/closed-jobs/${interviewer_id}`);
         setJobs(result);
-        setClosedJobs(closedResult);
+		console.log("closedResult: ", closedResult.data);
+        setClosedJobs(closedResult.data);
       } catch (error) {
         console.error("Error fetching job openings:", error);
       }
@@ -38,9 +41,9 @@ const Dashboard = () => {
     fetchData();
   }, [interviewer_id]);
 
-  useEffect(() => {
-    console.log("closedJobs: ", closedJobs); // Log the updated state
-  }, [closedJobs]);
+//   useEffect(() => {
+//     console.log("closedJobs: ", closedJobs); // Log the updated state
+//   }, [closedJobs]);
 
   return (
     <div>
@@ -67,10 +70,6 @@ const Dashboard = () => {
             {" "}
             Create Job{" "}
           </button>
-          <button class="primary-btn " onClick={onShowEnrolled}>
-            {" "}
-            View Enrollments{" "}
-          </button>
         </div>
 
         <br />
@@ -79,10 +78,10 @@ const Dashboard = () => {
         <br />
         <div class="row2">
           <div class="col1">
-            <Table data={jobs} columns={columns} />
+            <Table data={jobs} columns={columns} link={link} />
           </div>
           <div class="col1">
-            <Table data={closedJobs} columns={columns} />
+            <Table data={closedJobs} columns={closedColumns} />
           </div>
         </div>
       </main>

@@ -16,7 +16,7 @@ const ViewEnrollments = () => {
   const [selectedenrollId, setSelectedenrollId] = useState(null);
   const [rerender, setRerender] = useState(false);
   const navigate = useNavigate();
-  const columns = ["Candidate Name","Interview Date", "Result", "Action"];
+  const columns = ["id", "company", "jobDescription", "roleType", "status", "interviewDate"];
     
   const scheduleInterviewHandler = (enrollId) => {
     setSelectedenrollId(enrollId);
