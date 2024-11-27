@@ -23,16 +23,14 @@ body {
 
 table {
     width: 100%;
-    text-align: left;
+    align-self: center;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
+    /* display: flex; */
     margin: 0 auto;
-    padding: 0;
+    padding: 20px; /* Padding around the table */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border: 1px solid #6b7280; /* Gray-600 */
-    background-color: #1f2937; /* bg-gray-900 equivalent */
-    color: #ffffff; /* White text */
 }
 
 th, td {
@@ -42,7 +40,7 @@ th, td {
 }
 
 th {
-    background-color: #374151; /* Gray-700 */
+    background-color: #ffffff; /* Gray-700 */
     color: #ffffff; /* White */
     text-transform: uppercase;
     font-size: 12px;
@@ -50,13 +48,13 @@ th {
 }
 
 td {
-    background-color: rgb(17 24 39); /* bg-gray-900 equivalent */
+    background-color: #0073C2; /* bg-gray-900 equivalent */
     color: #ffffff; /* White */
 }
 
 thead th {
-    background-color: #4b5563; /* Gray-600 */
-    color: #ffffff; /* White */
+    background-color: #ffffff; /* Gray-600 */
+    color: #000; /* White */
     padding: 12px;
 }
 

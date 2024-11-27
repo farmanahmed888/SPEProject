@@ -10,8 +10,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PostInterviewRecordDTO {
-    private Integer jobId;
-    private Integer candidateId;
+    private Long jobId;
+    private Long candidateId;
     private String positiveFeedback;
     private String negativeFeedback;
     private List<String> fullfilledRequirements;

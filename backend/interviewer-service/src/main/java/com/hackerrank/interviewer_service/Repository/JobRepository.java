@@ -6,8 +6,9 @@ import com.hackerrank.interviewer_service.Entity.Job;
 
 import java.util.List;
 
-public interface JobRepository extends JpaRepository<Job,Integer> {
-    List<Job> findByInterviewerId(Integer id);
-    Integer countAllByInterviewerId(Integer interviewer);
+
+public interface JobRepository  extends JpaRepository<Job, Long> {
+    List<Job> findByInterviewerId(int id);
+    int countAllByInterviewerId(int interviewer);
     List<Job> findAllByStatus(String status);
 }

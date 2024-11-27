@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Getter
 @Setter
@@ -17,12 +16,12 @@ import java.util.Set;
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String company;
     private String contact;
     private String jobDescription;
     private String status;
-    private Integer noOfEnrollments;
+    private int noOfEnrollments;
     private String roleType;
 
     @ManyToOne

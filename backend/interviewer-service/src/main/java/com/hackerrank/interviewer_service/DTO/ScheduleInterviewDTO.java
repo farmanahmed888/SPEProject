@@ -6,6 +6,6 @@ import java.sql.Date;
 
 @Data
 public class ScheduleInterviewDTO {
-    private Integer enrollId;
+    private Long enrollId;
     private Date interviewDate;
 }

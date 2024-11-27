@@ -9,22 +9,20 @@ import java.util.Optional;
 
 public interface InterviewerService {
     String login(String email, String password);
-    Integer activeJobsCount(Integer id);
-    List<JobInfoDTO> getClosedJobs(Integer id);
+    int activeJobsCount(int id);
+    List<JobInfoDTO> getClosedJobs(int id);
     List<Job> allactiveJobsCount();
     String createJob(JobPostingDTO jobPostingRequest);
-
-    List<JobInfoDTO> getJobs(Integer id);
-
-    List<JobEnrollmentInfoDTO> getJobEnrollments(Integer jobId);
+    List<JobInfoDTO> getJobs(int id);
+    List<JobEnrollmentInfoDTO> getJobEnrollments(Long jobId);
     void scheduleInterview(ScheduleInterviewDTO dto);
-    CountDTO counter(Integer id);
+    CountDTO counter(int id);
     void interviewResult(InterviewRecordInfoDTO dto);
     boolean enrollInJob(JobEnrollDTO jobEnrollRequest);
-    void closeJob(Integer jobId);
+    void closeJob(int jobId);
     boolean updateTestScore(UpdateTestScoreDTO updateTestScoreRequest);
-    Optional<JobForCandidateMicroserviceDTO> getJob(Integer id);
+    Optional<JobForCandidateMicroserviceDTO> getJob(long id);
     boolean candidateCodeEditorCheck(CandidateCheckDTO CandidateCheckDTO);
     boolean interviewerCodeEditorCheck(String interviewerEmail);
-    InterviewRecord checkResults(Integer enrollId);
+    InterviewRecord checkResults(int enrollId);
 }

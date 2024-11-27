@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 @Service
-public class InterviewServiceImplementation implements InterviewerService{
+public class InterviewServiceImplementation implements InterviewerService {
     private CandidateClient candidateClient;
-    public void InterviewServiceImplementation(CandidateClient candidateClient) {
+    public InterviewServiceImplementation(CandidateClient candidateClient) {
         this.candidateClient = candidateClient;
     }
 
@@ -35,12 +36,10 @@ public class InterviewServiceImplementation implements InterviewerService{
 
     private String generateString() {
         StringBuilder stringBuilder = new StringBuilder();
-
         for (int i = 0; i < 16; i++) {
             if (i > 0 && i % 4 == 0) {
                 stringBuilder.append("-");
             }
-            // generate a random character
             char randomChar = (char) ('a' + Math.random() * ('z' - 'a' + 1));
             stringBuilder.append(randomChar);
         }
@@ -50,12 +49,18 @@ public class InterviewServiceImplementation implements InterviewerService{
 
     public boolean candidateCodeEditorCheck(CandidateCheckDTO CandidateCheckDTO){
         Enrollment enroll = enrollmentRepository.findByAndCandidateNameAndAndRoomId(CandidateCheckDTO.getCandidateName(),CandidateCheckDTO.getRoomId());
-        return enroll != null;
+        if(enroll ==null){
+            return false;
+        }
+        return true;
     }
 
     public boolean interviewerCodeEditorCheck(String email){
         Interviewer interviewer = interviewerRepository.findByEmail(email);
-        return interviewer != null;
+        if(interviewer ==null){
+            return false;
+        }
+        return true;
     }
 
     public String login(String email, String password) {
@@ -66,7 +71,8 @@ public class InterviewServiceImplementation implements InterviewerService{
         return null;
     }
     @Override
-    public Integer activeJobsCount(Integer id){
+    public int activeJobsCount(int id){
+        Optional<Interviewer> i= interviewerRepository.findById(id);
         return jobRepository.countAllByInterviewerId(id);
     }
     @Override
@@ -85,7 +91,6 @@ public class InterviewServiceImplementation implements InterviewerService{
         Optional<Interviewer> interviewerOptional = interviewerRepository.findById(jobPostingRequest.getInterviewerId());
         if (interviewerOptional.isPresent()) {
             job.setInterviewer(interviewerOptional.get());
-
             Set<AllRequirements> allRequirements = new HashSet<>();
             for (String requirementName : jobPostingRequest.getRequirements()) {
                 Optional<AllRequirements> requirementOptional = allRequirementsRepository.findByRequirementName(requirementName);
@@ -93,7 +98,7 @@ public class InterviewServiceImplementation implements InterviewerService{
             }
             job.setAllRequirements(allRequirements);
 
-            jobRepository.save(job);
+            Job savedJob = jobRepository.save(job);
             return "Job created successfully";
         } else {
             return "Interviewer not found for the given ID";
@@ -108,6 +113,7 @@ public class InterviewServiceImplementation implements InterviewerService{
         List<QuestionDTO> questions = job.getQuestions().stream()
                 .map(this::mapQuestionToQuestionDTO)
                 .collect(Collectors.toList());
+
         return new JobInfoDTO(
                 job.getId(),
                 job.getCompany(),
@@ -132,7 +138,7 @@ public class InterviewServiceImplementation implements InterviewerService{
     }
 
     @Override
-    public List<JobInfoDTO> getJobs(Integer id) {
+    public List<JobInfoDTO> getJobs(int id) {
         List<Job> jobs = jobRepository.findByInterviewerId(id);
         return jobs.stream()
                 .filter(job -> job.getStatus().equals("open"))
@@ -141,7 +147,7 @@ public class InterviewServiceImplementation implements InterviewerService{
 
     }
     @Override
-    public List<JobInfoDTO> getClosedJobs(Integer id) {
+    public List<JobInfoDTO> getClosedJobs(int id) {
         List<Job> jobs = jobRepository.findByInterviewerId(id);
         return jobs.stream()
                 .filter(job -> job.getStatus().equals("Closed"))
@@ -161,22 +167,22 @@ public class InterviewServiceImplementation implements InterviewerService{
     }
 
     @Override
-    public List<JobEnrollmentInfoDTO> getJobEnrollments(Integer jobId) {
+    public List<JobEnrollmentInfoDTO> getJobEnrollments(Long jobId) {
         List<Enrollment> enrollments = enrollmentRepository.findByJobId(jobId);
         List<JobEnrollmentInfoDTO> jobEnrollmentInfoDTOs = new ArrayList<>();
 
         for (Enrollment enrollment : enrollments) {
             JobEnrollmentInfoDTO dto = mapToJobEnrollmentInfoDTO(enrollment);
-            if(interviewRecordRepository.findByEnrollment(enrollment)!=null){
+            if(interviewRecordRepository.findByEnrollment(enrollment)!=null)
                 dto.setResultStatus(true);
-            }
+
             jobEnrollmentInfoDTOs.add(dto);
         }
         return jobEnrollmentInfoDTOs;
     }
     @Override
-    public InterviewRecord checkResults(Integer enrollId){
-        Optional<Enrollment> enroll = enrollmentRepository.findById(enrollId);
+    public InterviewRecord checkResults(int enrollId){
+        Optional<Enrollment> enroll = enrollmentRepository.findById((long) enrollId);
         return(interviewRecordRepository.findByEnrollment(enroll.get()));
     }
     @Override
@@ -193,7 +199,8 @@ public class InterviewServiceImplementation implements InterviewerService{
         updateAppliedJobDTO.setInterviewDate(dto.getInterviewDate());
         candidateClient.updateAppliedJob(updateAppliedJobDTO);
     }
-    public CountDTO counter(Integer InterviewerId){
+    @Override
+    public CountDTO counter(int InterviewerId){
         CountDTO dto = new CountDTO();
         dto.setActiveJobs(jobRepository.findAllByStatus("open").size());
         dto.setClosedJobs(jobRepository.findAllByStatus("closed").size());
@@ -241,7 +248,7 @@ public class InterviewServiceImplementation implements InterviewerService{
         }
     }
     @Override
-    public Optional<JobForCandidateMicroserviceDTO> getJob(Integer id) {
+    public Optional<JobForCandidateMicroserviceDTO> getJob(long id) {
         Optional<Job> job = jobRepository.findById(id);
         if (job.isPresent()) {
             Job presentJob = job.get();
@@ -254,7 +261,6 @@ public class InterviewServiceImplementation implements InterviewerService{
             }
             jobdto.setRequirements(req);
             jobdto.setRoleType(presentJob.getRoleType());
-
             return Optional.of(jobdto);
         } else {
             return Optional.empty();
@@ -273,8 +279,8 @@ public class InterviewServiceImplementation implements InterviewerService{
         }
     }
     @Override
-    public void closeJob(Integer jobId){
-        Job job = jobRepository.findById(jobId).get();
+    public void closeJob(int jobId){
+        Job job = jobRepository.findById((long) jobId).get();
         job.setStatus("Closed");
         jobRepository.save(job);
 

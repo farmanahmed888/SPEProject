@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "candidateMicroservice")
+@FeignClient(name="candidate-service")
 public interface CandidateClient {
     @GetMapping("/appliedJobs/{id}")
     ResponseEntity<List<AppliedJobDTO>> listOfAppliedJobs(@PathVariable Integer id);
     @PostMapping("/candidate/update-applied")
-    ResponseEntity<String> updateAppliedJob(@RequestBody updateAppliedJobDTO updateAppliedJobDTO);
-
+    ResponseEntity<String> updateAppliedJob(@RequestBody updateAppliedJobDTO updateAppliedJobDTO) ;
 }

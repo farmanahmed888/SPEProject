@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class CountDTO {
-    private Integer activeJobs;
-    private Integer closedJobs;
-    private Integer totalEnrollments;
-    private Integer totalInterview;
+    private int activeJobs;
+    private int closedJobs;
+    private int totalEnrollments;
+    private int totalInterview;
 }

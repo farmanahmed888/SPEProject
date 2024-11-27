@@ -14,8 +14,8 @@ import lombok.Setter;
 public class InterviewRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private Integer candidateId;
+    private Long id;
+    private Long candidateId;
 
     @OneToOne
     @JoinColumn(name = "enrollment_id")

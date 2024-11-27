@@ -17,8 +17,6 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/create-job" element={<JobForm />} />
                 <Route path="/active-jobs-view" element={<ViewEnrollments />} />
-                <Route path="/view-more-prev" element={<ViewPreviousJobs/>} />
-                <Route path="/view-more-open" element={<ViewActiveJobs/>} />
                 <Route path="/view-result" element={<DisplayResult/>} />
         </Route>
       </Routes>

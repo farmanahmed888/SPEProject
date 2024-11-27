@@ -15,20 +15,16 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class CandidateServiceImplementation implements CandidateService {
-
     @Autowired
     CandidateRepository candidateRepository;
-
     @Autowired
     private AppliedRepository appliedRepository;
     private InterviewerClient InterviewerClient;
-    public CandidateServiceImplementation(InterviewerClient InterviewerClient) {
-        this.InterviewerClient = InterviewerClient;
+    public CandidateServiceImplementation(InterviewerClient interviewerClient) {
+        this.InterviewerClient = interviewerClient;
     }
-
     public String login(String email, String password) {
         Candidate candidate = candidateRepository.findByEmail(email);
         if (candidate != null && candidate.getPassword().equals(password)) {
@@ -36,10 +32,8 @@ public class CandidateServiceImplementation implements CandidateService {
         }
         return null;
     }
-
     public String applyJob(JobApplyDTO jobRequest) {
         try {
-            System.out.println(jobRequest);
             Candidate candidate = candidateRepository.findById(jobRequest.getCid())
                     .orElseThrow(() -> new EntityNotFoundException("Candidate not found with ID: " + jobRequest.getCid()));
 
@@ -51,15 +45,12 @@ public class CandidateServiceImplementation implements CandidateService {
             appliedRepository.save(applied);
 
             JobEnrollDTO dto = new JobEnrollDTO();
-            dto.setCandidateId(candidate.getId());
-            dto.setJobId(jobRequest.getJid());
+            dto.setCandidateId(candidate.getId().longValue());
+            dto.setJobId(jobRequest.getJid().longValue());
             dto.setCandidateName(candidate.getEmail());
-            System.out.println(dto);
             ResponseEntity<String> d = InterviewerClient.enrollInJob(dto);
-            System.out.println(d);
             return "Success";
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -70,7 +61,6 @@ public class CandidateServiceImplementation implements CandidateService {
 
         List<AppliedJobDTO> appliedJobDTOList = new ArrayList<>();
         for (Applied applied : appliedList) {
-            System.out.println(applied.getJid());
             JobForCandidateMicroserviceDTO d = InterviewerClient.getJob(applied.getJid()).getBody().get();
 
             appliedJobDTOList.add(new AppliedJobDTO(
@@ -105,8 +95,6 @@ public class CandidateServiceImplementation implements CandidateService {
 
     @Override
     public boolean updateTestScore(Integer id, String testScore) {
-        System.out.println("Test: "+ testScore);
-
         Optional<Applied> appliedOptional = appliedRepository.findById(id);
         if (appliedOptional.isPresent()) {
             Applied applied = appliedOptional.get();

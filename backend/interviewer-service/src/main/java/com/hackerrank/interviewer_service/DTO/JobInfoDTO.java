@@ -10,14 +10,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class JobInfoDTO {
-    private Integer id;
+    private Long id;
     private String company;
     private String jobDescription;
     private String status;
-    private Integer noOfEnrollments;
+    private int noOfEnrollments;
     private String roleType;
-    private Integer interviewerId;
+    private int interviewerId;
     private List<String> requirements;
     private List<QuestionDTO> questions;
-
 }

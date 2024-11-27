@@ -13,7 +13,7 @@ import { BASE_URL } from "../config";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
-  const columns = ["id", "company", "jobDescription", "roleType", "status","Close Job"];
+  const columns = ["id", "company", "jobDescription", "roleType", "status","View Info"];
   const closedColumns = ["id", "company", "jobDescription", "roleType", "status"];
   const [closedJobs, setClosedJobs] = useState([]);
   const interviewer_id = localStorage.getItem("interviewer_id");

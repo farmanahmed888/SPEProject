@@ -15,9 +15,9 @@ public class JobPostingDTO {
     private String contact;
     private String jobDescription;
     private String status = "open";
-    private Integer noOfEnrollments = 0;
+    private int noOfEnrollments = 0;
     private String roleType;
-    private Integer interviewerId;
-    private Integer experience;
+    private int interviewerId;
+    private int experience;
     private Set<String> requirements = new HashSet<>();
 }

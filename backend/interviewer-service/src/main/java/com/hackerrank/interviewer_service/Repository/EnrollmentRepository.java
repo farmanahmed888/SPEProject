@@ -7,11 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface EnrollmentRepository extends JpaRepository<Enrollment, Integer> {
-
-    Optional<Enrollment> findByCandidateIdAndJobId(Integer candidateId, Integer jobId);
+public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
+    Optional<Enrollment> findByCandidateIdAndJobId(Long candidateId, Long jobId);
     List<Enrollment>findByRoomId(String room);
-    Optional<Enrollment> findById(Integer Enroll);
-    List<Enrollment> findByJobId(Integer jobId);
-    Enrollment findByAndCandidateNameAndAndRoomId (String candidateId, String roomId);
+    Optional<Enrollment> findById(Long Enroll);
+    List<Enrollment> findByJobId(Long jobId);
+    Enrollment findByAndCandidateNameAndAndRoomId (String cid, String roomId);
 }

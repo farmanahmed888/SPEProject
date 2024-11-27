@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
-@FeignClient(name = "InterviewerMicroservice")
+@FeignClient(name = "interviewer-service")
 public interface InterviewerClient {
     @GetMapping("/interviewer/job/{id}")
     public ResponseEntity<Optional<JobForCandidateMicroserviceDTO>> getJob(@PathVariable int id);
     @PostMapping("/interviewer/job/enroll")
     ResponseEntity<String> enrollInJob(@RequestBody JobEnrollDTO jobEnrollRequest);
-
 }
-

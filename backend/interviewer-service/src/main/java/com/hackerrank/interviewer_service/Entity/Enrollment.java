@@ -16,9 +16,9 @@ import java.sql.Date;
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    private Integer candidateId;
+    private Long candidateId;
     private String candidateName;
     private Date interviewDate=null;
     private String roomId = "";

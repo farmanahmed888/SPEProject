@@ -17,6 +17,6 @@ import lombok.Setter;
 public class AllRequirements {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer reqId;
+    private Long reqId;
     private String requirementName;
 }

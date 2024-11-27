@@ -15,7 +15,9 @@ const JobForm = () => {
   const [roleType, setRoleType] = useState('');
   const [experience, setExperience] = useState(0);
   const [requirements, setRequirements] = useState([]);
-
+  const handleroleTypeChange = (event) => {
+    setRoleType(event.target.value);
+  };
   const handleRequirementsChange = (e) => {
     const tech = e.target.value;
     setRequirements((prevRequirements) =>
@@ -65,7 +67,21 @@ const JobForm = () => {
           onChange={(e) => setContact(e.target.value)}
           required
         /> 
-        <GradientInput
+        <div style={{ width: "50%" ,paddingTop:"20px"}}>
+          <select
+            name="gender"
+            value={roleType}
+            onChange={handleroleTypeChange}
+            className="form__field "
+          >
+            <option value="">Select Role Type</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Full-stack Developer">Full-stack Developer</option>
+            <option value="Blockchain Developer">Blockchain Developer</option>
+          </select>
+        </div>
+        {/* <GradientInput
           id="roleType"
           type="text"
           name="Role"
@@ -73,7 +89,7 @@ const JobForm = () => {
           className="input-styles"
           onChange={(e) => setRoleType(e.target.value)}
           required
-        /> 
+        />  */}
         <GradientInput
           id="jobDescription"
           type="text"
