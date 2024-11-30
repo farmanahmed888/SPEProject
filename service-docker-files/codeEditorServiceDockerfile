@@ -1,0 +1,8 @@
+FROM node:lts-alpine
+WORKDIR /app
+COPY ../backend/codeeditor-service/package.json /app
+COPY ../backend/codeeditor-service/package-lock.json /app
+RUN npm install --legacy-peer-deps
+COPY ../backend/codeeditor-service /app
+EXPOSE 5000
+CMD ["node", "server.js"]

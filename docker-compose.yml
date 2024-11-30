@@ -1,0 +1,108 @@
+services:
+  spe-project-db:
+    image: mysql:8
+    container_name: spe-project-db
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Farman@@5
+      - MYSQL_DATABASE=speproject
+    networks:
+      - hackerrank-clone
+    volumes:
+      - spe-project-db:/var/lib/mysql
+
+  discovery-server:
+    image: farmanahmed888/discovery-server:latest
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - hackerrank-clone
+
+  load-balancer:
+    image: farmanahmed888/loadbalancer:latest
+    container_name: load-balancer
+    environment:
+        - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    ports:
+      - "8000:8000"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+
+  interview-service:
+    image: farmanahmed888/interview-service:latest
+    container_name: interview-service
+    environment:
+        - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+        - SPRING_DATASOURCE_URL=jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true
+        - SPRING_DATASOURCE_USERNAME=root
+        - SPRING_DATASOURCE_PASSWORD=Farman@@5
+    ports:
+      - "8081:8081"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
+
+  candidate-service:
+    image: farmanahmed888/candidate-service:latest
+    container_name: candidate-service
+    ports:
+      - "8082:8082"
+    environment:
+        - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+        - SPRING_DATASOURCE_URL=jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true
+        - SPRING_DATASOURCE_USERNAME=root
+        - SPRING_DATASOURCE_PASSWORD=Farman@@5
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
+
+  codeeditor-service:
+    image: farmanahmed888/codeeditor-service:latest
+    container_name: codeeditor-service
+    ports:
+      - "9001:9001"
+    networks:
+      - hackerrank-clone
+
+  interviewer-frontend:
+    image: farmanahmed888/interviewer-frontend:latest
+    container_name: interviewer-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - hackerrank-clone
+
+  candidate-frontend:
+    image: farmanahmed888/candidate-frontend:latest
+    container_name: candidate-frontend
+    ports:
+      - "3001:80"
+    networks:
+      - hackerrank-clone
+
+  codeeditor-frontend:
+    image: farmanahmed888/codeeditor-frontend:latest
+    container_name: codeeditor-frontend
+    ports:
+      - "3002:80"
+    networks:
+        - hackerrank-clone
+
+
+networks:
+  hackerrank-clone:
+    driver: bridge
+
+volumes:
+  spe-project-db:
+    driver: local

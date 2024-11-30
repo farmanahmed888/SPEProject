@@ -1,0 +1,5 @@
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY ../jars/candidate-service.jar /app/candidate-service.jar
+EXPOSE 8082
+CMD ["java", "-jar", "candidate-service.jar"]

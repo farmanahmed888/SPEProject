@@ -1,0 +1,5 @@
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY ../jars/interviewer-service.jar /app/interviewer-service.jar
+EXPOSE 8081
+CMD ["java", "-jar", "interviewer-service.jar"]
