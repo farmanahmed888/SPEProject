@@ -1,0 +1,65 @@
+version: '3.8'
+
+networks:
+  hackerrank-clone:
+    driver: bridge
+
+volumes:
+  spe-project-db:
+    driver: local
+
+services:
+  spe-project-db:
+    image: mysql:8
+    container_name: spe-project-db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Farman@@5
+      - MYSQL_DATABASE=speproject
+    networks:
+      - hackerrank-clone
+    volumes:
+      - spe-project-db:/var/lib/mysql
+
+  discovery-server:
+    image: farmanahmed888/discovery-server:latest
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - hackerrank-clone
+
+  load-balancer:
+    image: farmanahmed888/loadbalancer:latest
+    container_name: load-balancer
+    ports:
+      - "8000:8000"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+
+  interview-service:
+    image: farmanahmed888/interviewer-service:latest
+    container_name: interview-service
+    ports:
+      - "8081:8081"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
+
+  candidate-service:
+    image: farmanahmed888/candidate-service:latest
+    container_name: candidate-service
+    ports:
+      - "8082:8082"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
