@@ -32,8 +32,8 @@ services:
     depends_on:
       - discovery-server
 
-  interview-service:
-    image: farmanahmed888/interview-service:latest
+  interviewer-service:
+    image: farmanahmed888/interviewer-service:latest
     container_name: interview-service
     environment:
         - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
