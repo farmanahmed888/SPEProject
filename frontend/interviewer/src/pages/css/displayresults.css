@@ -1,0 +1,12 @@
+display-results {
+    display: flex;
+    justify-self: center;
+    height: 40px; /* 10 * 4px (rem) */
+    width: 100%;
+    border-radius: 4px; /* md translates to 4px */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 8px 12px; /* py-2 (8px), px-3 (12px) */
+    font-size: 14px; /* sm translates to 14px */
+    color: #333;
+}

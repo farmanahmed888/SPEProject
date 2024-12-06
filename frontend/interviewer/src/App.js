@@ -3,8 +3,6 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import JobForm from './pages/JobForm';
 import ViewEnrollments from './pages/ViewEnrollments';
-import ViewPreviousJobs from './pages/ViewPreviousJobs';
-import ViewActiveJobs from './pages/ViewActiveJobs';
 import DisplayResult from './pages/DisplayResult';
 import Layout from './pages/Layout';
 import { BrowserRouter, Routes, Route } from "react-router-dom";

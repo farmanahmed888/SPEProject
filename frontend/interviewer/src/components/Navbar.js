@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav id="nav">
 			<div className="nav-logo">
-				{/* <Link to="/doctor-dashboard"> */}
+				 <Link to="/dashboard">
 					<div className="nav-heading">
 						<span>
 							{/* <img
@@ -17,7 +17,7 @@ const Navbar = () => {
 							Hackerrank
 						</span>
 					</div>
-				{/* </Link> */}
+				 </Link>
 
 				<div className="hamburger">
 					<a href="#">
