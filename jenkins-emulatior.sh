@@ -46,6 +46,6 @@ echo "Pushing frontend docker images"
 docker push farmanahmed888/codeeditor-frontend:latest
 docker push farmanahmed888/candidate-frontend:latest
 docker push farmanahmed888/interviewer-frontend:latest
-
-echo "Starting docker-compose"
-docker-compose -f docker-compose.yml up -d
+#
+#echo "Starting docker-compose"
+#docker-compose -f docker-compose.yml up -d

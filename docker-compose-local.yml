@@ -1,0 +1,160 @@
+services:
+  spe-project-db:
+    image: mysql:8
+    container_name: spe-project-db
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Farman@@5
+      - MYSQL_DATABASE=speproject
+    networks:
+      - hackerrank-clone
+    volumes:
+      - spe-project-db:/var/lib/mysql
+
+  discovery-server:
+    image: discovery-server:local
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - hackerrank-clone
+
+  load-balancer:
+    image: loadbalancer:local
+    container_name: load-balancer
+    environment:
+      - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    ports:
+      - "8000:8000"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+
+  interviewer-service:
+    image: interviewer-service:local
+    container_name: interviewer-service
+    environment:
+      - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Farman@@5
+    ports:
+      - "8081:8081"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
+
+  candidate-service:
+    image: candidate-service:local
+    container_name: candidate-service
+    ports:
+      - "8082:8082"
+    environment:
+      - DISCOVERY_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Farman@@5
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - discovery-server
+      - load-balancer
+      - spe-project-db
+
+  codeeditor-service:
+    image: codeeditor-service:local
+    container_name: codeeditor-service
+    ports:
+      - "9001:9001"
+    networks:
+      - hackerrank-clone
+
+  interviewer-frontend:
+    image: interviewer-frontend:local
+    container_name: interviewer-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - hackerrank-clone
+
+  candidate-frontend:
+    image: candidate-frontend:local
+    container_name: candidate-frontend
+    ports:
+      - "3001:80"
+    networks:
+      - hackerrank-clone
+
+  codeeditor-frontend:
+    image: codeeditor-frontend:local
+    container_name: codeeditor-frontend
+    ports:
+      - "3002:80"
+    networks:
+      - hackerrank-clone
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: elasticsearch
+    restart: always
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - network.host=0.0.0.0
+      - http.port=9200
+    ports:
+      - "9200:9200"
+    networks:
+      - hackerrank-clone
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch:/var/log/elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.2
+    container_name: kibana
+    restart: always
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.10.2
+    container_name: logstash
+    restart: always
+    environment:
+      - LS_JAVA_OPTS=-Xmx512m -Xms512m
+    ports:
+      - "5001:5001/tcp"
+      - "5001:5001/udp"
+      - "9600:9600"
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    networks:
+      - hackerrank-clone
+    depends_on:
+      - elasticsearch
+
+networks:
+  hackerrank-clone:
+    driver: bridge
+
+volumes:
+  spe-project-db:
+    driver: local
+  esdata:
+    driver: local
