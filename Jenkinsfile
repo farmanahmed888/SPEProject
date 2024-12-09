@@ -84,23 +84,28 @@ pipeline{
 
         stage('Push Docker Images') {
             steps {
-                sh """
-                docker push ${REGISTRY}/discovery-server:latest
-                docker push ${REGISTRY}/loadbalancer:latest
-                docker push ${REGISTRY}/candidate-service:latest
-                docker push ${REGISTRY}/interviewer-service:latest
-                docker push ${REGISTRY}/codeeditor-service:latest
-                docker push ${REGISTRY}/codeeditor-frontend:latest
-                docker push ${REGISTRY}/candidate-frontend:latest
-                docker push ${REGISTRY}/interviewer-frontend:latest
-                """
+                script{
+                    withDockerRegistry(credentialsId: 'DockerCreds', toolName: 'Docker') {
+                        sh """
+                        docker push ${REGISTRY}/discovery-server:latest
+                        docker push ${REGISTRY}/loadbalancer:latest
+                        docker push ${REGISTRY}/candidate-service:latest
+                        docker push ${REGISTRY}/interviewer-service:latest
+                        docker push ${REGISTRY}/codeeditor-service:latest
+                        docker push ${REGISTRY}/codeeditor-frontend:latest
+                        docker push ${REGISTRY}/candidate-frontend:latest
+                        docker push ${REGISTRY}/interviewer-frontend:latest
+                        """
+                    }
+                }
+
             }
         }
 
 
         stage('Ansible Deploy'){
             steps{
-                echo 'Deploying the project...'
+                sh "ansible-playbook -i inventory deploy.yml"
             }
         }
     }
