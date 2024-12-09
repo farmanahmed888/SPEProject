@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c021f9aa-2a17-46c9-8d3e-5c10ddd09a7d" name="Changes" comment="" />
+    <list default="true" id="c021f9aa-2a17-46c9-8d3e-5c10ddd09a7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/k8s/candidate-frontend-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/candidate-frontend-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/candidate-service-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/candidate-service-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-frontend-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-frontend-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-service-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-service-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/discovery-server-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/discovery-server-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-cm1-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-cm2-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/esdata-persistentvolumeclaim.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/interviewer-frontend-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/interviewer-frontend-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/interviewer-service-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/interviewer-service-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/kibana-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/kibana-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/load-balancer-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/load-balancer-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/logstash-cm0-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/logstash-cm1-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/logstash-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/logstash-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-persistentvolumeclaim.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +85,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Docker.docker-compose.yml.codeeditor-service: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.discovery-server: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.interview-service: Compose Deployment.executor": "Run",
@@ -166,14 +199,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -192,5 +217,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
