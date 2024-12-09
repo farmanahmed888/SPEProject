@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c021f9aa-2a17-46c9-8d3e-5c10ddd09a7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/k8s/candidate-frontend-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/candidate-frontend-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/candidate-service-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/candidate-service-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-frontend-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-frontend-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-service-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/codeeditor-service-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/discovery-server-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/discovery-server-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-cm1-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-cm2-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elasticsearch-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/esdata-persistentvolumeclaim.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/interviewer-frontend-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/interviewer-frontend-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/interviewer-service-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/interviewer-service-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/kibana-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/kibana-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/load-balancer-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/load-balancer-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/logstash-cm0-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/logstash-cm1-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/logstash-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/logstash-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-persistentvolumeclaim.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/spe-project-db-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
