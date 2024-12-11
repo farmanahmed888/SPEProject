@@ -24,16 +24,12 @@ cd ../../
 mv backend/interviewer-service/target/interviewer-service-0.0.1-SNAPSHOT.jar jars/interviewer-service.jar
 
 echo "Building backend docker images"
-docker build -t farmanahmed888/discovery-server:latest -f service-docker-files/discoveryServerDockerfile .
-docker build -t farmanahmed888/loadbalancer:latest -f service-docker-files/loadbalancerDockerfile .
-docker build -t farmanahmed888/candidate-service:latest -f service-docker-files/candidateServiceDockerfile .
-docker build -t farmanahmed888/interviewer-service:latest -f service-docker-files/interviewerServiceDockerfile .
-docker build -t farmanahmed888/codeeditor-service:latest -f service-docker-files/codeEditorServiceDockerfile .
+docker build   -t farmanahmed888/discovery-server:latest -f service-docker-files/discoveryServerDockerfile .
+docker build   -t farmanahmed888/loadbalancer:latest -f service-docker-files/loadbalancerDockerfile .
+docker build   -t farmanahmed888/candidate-service:latest -f service-docker-files/candidateServiceDockerfile .
+docker build   -t farmanahmed888/interviewer-service:latest -f service-docker-files/interviewerServiceDockerfile .
+docker build   -t farmanahmed888/codeeditor-service:latest -f service-docker-files/codeEditorServiceDockerfile .
 
-echo "Building frontend docker images"
-docker build -t farmanahmed888/codeeditor-frontend:latest -f frontend-docker-files/codeEditorFrontendDockerfile .
-docker build -t farmanahmed888/candidate-frontend:latest -f frontend-docker-files/candidateFrontendDockerfile .
-docker build -t farmanahmed888/interviewer-frontend:latest -f frontend-docker-files/interviewerFrontendDockerfile .
 
 echo "Pushing backend docker images"
 docker push farmanahmed888/discovery-server:latest
@@ -42,10 +38,18 @@ docker push farmanahmed888/candidate-service:latest
 docker push farmanahmed888/interviewer-service:latest
 docker push farmanahmed888/codeeditor-service:latest
 
+
+echo "Building frontend docker images"
+docker build   -t farmanahmed888/codeeditor-frontend:latest -f frontend-docker-files/codeEditorFrontendDockerfile .
+docker build   -t farmanahmed888/candidate-frontend:latest -f frontend-docker-files/candidateFrontendDockerfile .
+docker build   -t farmanahmed888/interviewer-frontend:latest -f frontend-docker-files/interviewerFrontendDockerfile .
+
+
+
 echo "Pushing frontend docker images"
 docker push farmanahmed888/codeeditor-frontend:latest
 docker push farmanahmed888/candidate-frontend:latest
 docker push farmanahmed888/interviewer-frontend:latest
-#
+
 #echo "Starting docker-compose"
 #docker-compose -f docker-compose.yml up -d

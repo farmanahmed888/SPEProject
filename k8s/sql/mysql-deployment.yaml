@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spe-project-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spe-project-db
+  template:
+    metadata:
+      labels:
+        app: spe-project-db
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "Farman@@5"
+            - name: MYSQL_DATABASE
+              value: "speproject"
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+            claimName: spe-project-db-pvc

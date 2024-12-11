@@ -12,3 +12,27 @@
 08-12-2024 19:37:02.135 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 3234 (started by swadik in /Users/swadik/Downloads/SPEProject-main-2/backend/interviewer-service)
 08-12-2024 19:37:02.137 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
 08-12-2024 19:37:03.723 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.677 seconds (process running for 2.176)
+10-12-2024 11:07:05.845 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 9273 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+10-12-2024 11:07:05.847 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10-12-2024 11:07:07.469 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.712 seconds (process running for 2.206)
+10-12-2024 14:04:56.979 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 12959 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+10-12-2024 14:04:56.981 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10-12-2024 14:04:58.606 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.717 seconds (process running for 2.253)
+10-12-2024 14:07:45.236 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 13339 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+10-12-2024 14:07:45.238 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10-12-2024 14:07:46.842 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.695 seconds (process running for 2.191)
+10-12-2024 22:04:10.083 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 27486 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+10-12-2024 22:04:10.085 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10-12-2024 22:04:11.677 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.688 seconds (process running for 2.185)
+10-12-2024 22:19:35.271 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 27978 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+10-12-2024 22:19:35.273 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10-12-2024 22:19:36.871 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.689 seconds (process running for 2.169)
+11-12-2024 00:08:31.294 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 30846 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+11-12-2024 00:08:31.296 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+11-12-2024 00:08:32.846 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.636 seconds (process running for 2.127)
+11-12-2024 01:25:37.351 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 34343 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+11-12-2024 01:25:37.352 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+11-12-2024 01:25:38.921 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.658 seconds (process running for 2.191)
+11-12-2024 01:50:31.450 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Starting InterviewerServiceApplicationTests v1.0.0 using Java 21.0.5 with PID 35056 (started by swadik in /Users/swadik/Documents/GitHub/SPEProject/backend/interviewer-service)
+11-12-2024 01:50:31.452 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+11-12-2024 01:50:32.971 [main] INFO  -c.h.i.InterviewerServiceApplicationTests - Started InterviewerServiceApplicationTests in 1.607 seconds (process running for 2.124)

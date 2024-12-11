@@ -13,9 +13,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await console.log("api call to localhost:8000");
+      await console.log("api call to load-balancer:8000");
       const response = await axios.post(
-        "http://localhost:8000/candidate/login",
+        "http://load-balancer:8000/candidate/login",
         { email, password }
       );
       console.log(response.data);
