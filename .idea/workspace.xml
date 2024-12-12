@@ -5,43 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c021f9aa-2a17-46c9-8d3e-5c10ddd09a7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/deployk8s.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/.idea/k8s.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/backend/secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elastic/elasticsearch-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elastic/kibana-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/elastic/logstash-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/frontend/codeeditor-frontend.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/deploy-backend/tasks/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/deploy-db/tasks/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/deploy-elastic/tasks/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/deploy-frontend/tasks/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/pull-docker-images/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/interviewer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/interviewer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/candidate-service/src/main/java/com/hackerrank/candidate_service/Controller/CandidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/candidate-service/src/main/java/com/hackerrank/candidate_service/Controller/CandidateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/candidate-service/src/main/java/com/hackerrank/candidate_service/CorsConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/Controller/InterviewerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/Controller/InterviewerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/CorsConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/logs/interviewer-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/logs/interviewer-service.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/candidate/src/pages/AppliedJobs.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/candidate/src/pages/AppliedJobs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/candidate/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/candidate/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/candidate/src/pages/ViewJobs.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/candidate/src/pages/ViewJobs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/interviewer/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/interviewer/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/candidate-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/candidate-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/discovery-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/discovery-server.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jars/interviewer-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/interviewer-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/loadbalancer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/loadbalancer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenkins-emulatior.sh" beforeDir="false" afterPath="$PROJECT_DIR$/jenkins-emulatior.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/backend/candidate-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend/candidate-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/backend/discovery-server.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend/discovery-server.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/backend/interviewer-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend/interviewer-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/backend/loadbalancer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend/loadbalancer.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/frontend/candidate-frontend.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/frontend/candidate-frontend.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/frontend/interviewer-frontend.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/frontend/interviewer-frontend.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/sql/mysql-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/sql/mysql-service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +79,7 @@
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "experimenta",
+    "git-widget-placeholder": "pod-communication",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/swadik/Documents/GitHub/SPEProject",
     "list.type.of.created.stylesheet": "CSS",

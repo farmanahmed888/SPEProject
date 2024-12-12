@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db530cdc-32ff-4c28-8c02-27224cb0d9ed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/candidate-service/src/main/java/com/hackerrank/candidate_service/CandidateServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/candidate-service/src/main/java/com/hackerrank/candidate_service/CandidateServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/candidate-service/src/main/java/com/hackerrank/candidate_service/Controller/CandidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/candidate-service/src/main/java/com/hackerrank/candidate_service/Controller/CandidateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/candidate-service/src/main/java/com/hackerrank/candidate_service/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/Controller/InterviewerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/Controller/InterviewerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/InterviewerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/interviewer-service/src/main/java/com/hackerrank/interviewer_service/InterviewerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/logs/interviewer-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/logs/interviewer-service.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../candidate/src/pages/AppliedJobs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../candidate/src/pages/AppliedJobs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../candidate/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../candidate/src/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../candidate/src/pages/ViewJobs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../candidate/src/pages/ViewJobs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jars/candidate-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../jars/candidate-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jars/discovery-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../jars/discovery-server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jars/interviewer-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../jars/interviewer-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jars/loadbalancer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../jars/loadbalancer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jenkins-emulatior.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../jenkins-emulatior.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/backend/candidate-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/backend/candidate-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/backend/interviewer-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/backend/interviewer-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/frontend/candidate-frontend.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/frontend/candidate-frontend.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/frontend/interviewer-frontend.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/frontend/interviewer-frontend.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2q7KU62PovAcqcr95VITjHxlYQW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "pod-communication",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/swadik/Documents/GitHub/SPEProject/frontend/interviewer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db530cdc-32ff-4c28-8c02-27224cb0d9ed" name="Changes" comment="" />
+      <created>1734008186027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734008186027</updated>
+      <workItem from="1734008187342" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

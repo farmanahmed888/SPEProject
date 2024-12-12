@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin(origins = "*")
-@Slf4j
+
+
 @RestController
 @RequestMapping("/interviewer")
+@CrossOrigin(origins = "http://192.168.49.2:30007")
 public class InterviewerController {
     private static final Logger logger = LoggerFactory.getLogger(InterviewerController.class);
     @Autowired

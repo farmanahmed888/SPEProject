@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/candidate")
+@CrossOrigin(origins = "*")
 public class CandidateController {
     @Autowired
     private CandidateService candidateService;
