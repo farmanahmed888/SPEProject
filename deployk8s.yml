@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars:
+    docker_username: "farmanahmed888"
+  roles:
+    - pull-docker-images
+    - deploy-db
+    - deploy-backend
+    - deploy-frontend
+    - deploy-elastic

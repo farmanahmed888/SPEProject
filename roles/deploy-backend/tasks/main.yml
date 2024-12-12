@@ -1,0 +1,3 @@
+---
+- name: Deploy Backend Application
+  command: kubectl apply -f k8s/backend/

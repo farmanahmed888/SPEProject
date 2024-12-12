@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: load-balancer
+  name: loadbalancer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: load-balancer
+      app: loadbalancer
   template:
     metadata:
       labels:
-        app: load-balancer
+        app: loadbalancer
     spec:
       containers:
-        - name: load-balancer
+        - name: loadbalancer
           image: farmanahmed888/loadbalancer:latest
           ports:
             - containerPort: 8000
           env:
             - name: DISCOVERY_SERVICEURL_DEFAULTZONE
-              value: "http://discovery-server:8761/eureka"
+              value: "http://discovery-server.default.svc.cluster.local:8761/eureka"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: load-balancer
+  name: loadbalancer
 spec:
   selector:
-    app: load-balancer
+    app: loadbalancer
   ports:
     - protocol: TCP
       port: 8000

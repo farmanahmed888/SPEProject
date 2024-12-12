@@ -1,1 +1,1 @@
-export const BASE_URL = "http://interviewer-service:8081";
+export const BASE_URL = "http://interviewer-service.default.svc.cluster.local:8081";

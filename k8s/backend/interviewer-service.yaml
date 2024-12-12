@@ -17,9 +17,16 @@ spec:
           image: farmanahmed888/interviewer-service:latest
           ports:
             - containerPort: 8081
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
           env:
             - name: DISCOVERY_SERVICEURL_DEFAULTZONE
-              value: "http://discovery-server:8761/eureka"
+              value: "http://discovery-server.default.svc.cluster.local:8761/eureka"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true"
             - name: SPRING_DATASOURCE_USERNAME
@@ -39,3 +46,22 @@ spec:
       port: 8081
       targetPort: 8081
   type: LoadBalancer
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: interviewer-service-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: interviewer-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80

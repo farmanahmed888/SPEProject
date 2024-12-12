@@ -13,7 +13,7 @@ function ViewJobs() {
 		const fetchData = async () => {
 			try {
 				const id = parseInt(localStorage.getItem("candidateId"));
-				const response = await axios.get(`http://load-balancer:8000/candidate/appliedJobs/${id}`);
+				const response = await axios.get(`http://loadbalancer:8000/candidate/appliedJobs/${id}`);
 				console.log(response.data);
 				setTableData(response.data); // Assuming response.data is an array of data for the table
 			} catch (error) {

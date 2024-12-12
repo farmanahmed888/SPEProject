@@ -17,15 +17,28 @@ spec:
           image: farmanahmed888/candidate-service:latest
           ports:
             - containerPort: 8082
+          resources: # Add resource requests and limits
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
           env:
             - name: DISCOVERY_SERVICEURL_DEFAULTZONE
-              value: "http://discovery-server:8761/eureka"
+              value: "http://discovery-server.default.svc.cluster.local:8761/eureka"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://spe-project-db:3306/speproject?createDatabaseIfNotExist=true"
             - name: SPRING_DATASOURCE_USERNAME
-              value: "root"
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: username
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "Farman@@5"
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: password
 ---
 apiVersion: v1
 kind: Service
@@ -39,3 +52,28 @@ spec:
       port: 8082
       targetPort: 8082
   type: LoadBalancer
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: candidate-service-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: candidate-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 75

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codeeditor-frontend
+  labels:
+    app: codeeditor-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codeeditor-frontend
+  template:
+    metadata:
+      labels:
+        app: codeeditor-frontend
+    spec:
+      containers:
+        - name: codeeditor-frontend
+          image: farmanahmed888/codeeditor-frontend:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: codeeditor-frontend
+  labels:
+    app: codeeditor-frontend
+spec:
+  selector:
+    app: codeeditor-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

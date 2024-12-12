@@ -1,0 +1,3 @@
+---
+- name: Deploy elastic
+  command: kubectl apply -f k8s/elastic/

@@ -1,0 +1,16 @@
+- name: Pull Docker images
+  command: docker pull {{ docker_username }}/{{ item }}
+  loop:
+    - interviewer-service:latest
+    - candidate-service:latest
+    - codeeditor-service:latest
+    - interviewer-frontend:latest
+    - candidate-frontend:latest
+    - codeeditor-frontend:latest
+- name: Pull Elastic Docker
+  command: docker pull {{ item }}
+  loop:
+    - docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    - docker.elastic.co/kibana/kibana:7.10.2
+    - docker.elastic.co/logstash/logstash:7.10.2
+    - mysql:latest
